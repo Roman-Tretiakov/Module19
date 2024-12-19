@@ -4,7 +4,7 @@ from django.db import models
 class Buyer(models.Model):
     name = models.CharField(max_length=100, null=False)
     balance = models.DecimalField(null=False, max_digits=20, decimal_places=2)
-    age = models.IntegerField(null=False)
+    age = models.PositiveIntegerField(null=False)
 
     def __str__(self):
         return self.name

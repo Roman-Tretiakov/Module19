@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block pagename %}
+    <div>
+        <h1 style="padding-left: 2em;">{{ main_page }}</h1>
+    </div>
+    {% endblock %}
+    {% block menu %}
+    <div>
+        <a href="{% url 'task1:platform' %}"><h3 style="padding-left: 4em;">{{ main }}</h3></a>
+    </div>
+    <div>
+        <a href="{% url 'task1:shop' %}"><h3 style="padding-left: 4em;">{{ shop }}</h3></a>
+    </div>
+    <div>
+        <a href="{% url 'task1:basket' %}"><h3 style="padding-left: 4em;">{{ basket }}</h3></a>
+    </div>
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

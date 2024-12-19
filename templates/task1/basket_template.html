@@ -1,0 +1,17 @@
+{% extends 'task1\menu.html' %}
+
+{% block pagename %}
+    <div>
+        <h1 style="margin-left: 40px;">{{ basket }}</h1>
+    </div>
+{% endblock %}
+
+{% block menu %}
+  {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1 style="margin-left: 40px;">{{ basket_message }}</h1>
+    </div>
+{% endblock %}
