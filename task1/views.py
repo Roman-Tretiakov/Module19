@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.template.defaultfilters import title
+from django.core.paginator import Paginator
 
 from task1.forms import UserRegister
-from task1.models import Buyer, Game
+from task1.models import Buyer, Game, News
 
 DEFAULT_BALANCE = 100.00
 MIN_AGE = 18
@@ -21,6 +22,7 @@ class BaseView(TemplateView):
         context['buy_button'] = 'Купить'
         context['back_button'] = 'Вернуться обратно'
         context['basket_message'] = 'Извините, ваша корзина пуста!'
+        context['news'] = 'Новости'
         return context
 
 
@@ -62,3 +64,12 @@ def sign_up_by_django(request):
     else:
         form = UserRegister(request.POST)
         return render(request, 'task1/registration_page.html', {'form': form})
+
+
+def news(request):
+    news_list = News.objects.all().order_by('-date')
+    paginator = Paginator(news_list, 3)
+    page_num = request.GET.get('page')
+    page_obj = paginator.get_page(page_num)
+
+    return render(request, 'task1/news.html', context={'news_list': news_list, 'page_obj': page_obj})
