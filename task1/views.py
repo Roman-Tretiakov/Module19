@@ -72,4 +72,4 @@ def news(request):
     page_num = request.GET.get('page')
     page_obj = paginator.get_page(page_num)
 
-    return render(request, 'task1/news.html', context={'news_list': news_list, 'page_obj': page_obj})
+    return render(request, 'task1/news.html', context={'page_obj': page_obj})
