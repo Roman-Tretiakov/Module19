@@ -42,7 +42,7 @@ class News(models.Model):
     title = models.CharField(max_length=100, null=False)
     content = models.TextField(null=False)
     date = models.DateTimeField(auto_now_add=True)
-    publisher_id = models.ForeignKey(Publisher, on_delete=models.CASCADE, related_name='publisher')
+    publisher_id = models.ForeignKey(Publisher, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
