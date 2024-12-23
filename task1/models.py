@@ -38,6 +38,7 @@ class Publisher(models.Model):
     def __str__(self):
         return self.publisher_name
 
+
 class News(models.Model):
     title = models.CharField(max_length=100, null=False)
     content = models.TextField(null=False)

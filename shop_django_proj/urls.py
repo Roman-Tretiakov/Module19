@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from task1.views import sign_up_by_django
+#from task1.views import sign_up_by_django
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', sign_up_by_django, name='sign_up_by_django'),
-    path('platform/', include('task1.urls', namespace='task1')),
+    #path('', sign_up_by_django, name='sign_up_by_django'),
+    #path('platform/', include('task1.urls', namespace='task1')),
 ]
