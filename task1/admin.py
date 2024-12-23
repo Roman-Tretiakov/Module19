@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Buyer, Game, News
+from .models import *
 
 
 @admin.register(Game)
@@ -25,3 +25,18 @@ class NewsAdmin(admin.ModelAdmin):
     list_filter = ('date',)
     list_per_page = 20
 
+
+@admin.register(Manufacturer)
+class ManufacturerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'country')
+    list_filter = ('name', 'country')
+    list_per_page = 20
+    search_fields = ('name',)
+
+
+@admin.register(Publisher)
+class PublisherAdmin(admin.ModelAdmin):
+    list_display = ('publisher_name', 'author_name')
+    list_filter = ('publisher_name',)
+    list_per_page = 20
+    search_fields = ('publisher_name',)
