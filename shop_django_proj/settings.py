@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'task1',
-    'rest_api_app',
+    'rest_framework',
+    'rest_api_app.apps.RestApiAppConfig',
 ]
 
 MIDDLEWARE = [
@@ -77,21 +77,14 @@ WSGI_APPLICATION = 'shop_django_proj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'shop_db',
+        'USER': 'postgres',
+        'PASSWORD': 'romantre',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'shop_db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'romantre',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
 
 
 # Password validation
